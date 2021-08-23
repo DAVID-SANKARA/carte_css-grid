@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;   
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: pink;
+    padding: 30px;
+}
+.container{
+    position: relative;
+    max-width: 850px;
+    width:100%;
+    background: #fff;
+    padding:40px 30px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    perspective:2700;
+}
+.container .cover {
+    position:absolute;
+    top:0;
+    left: 50%;
+    height:100%;
+    width:50%;
+    z-index: 98;
+    transition: all 1s ease;
+    transform-origin: left;
+    transform-style: preserve-3d;
+}
+.container .cover::before{
+    background: pink;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+}
+.container #flip:checked ~ .cover{
+    transform: rotateY(-180deg)
+}
+.container .form{
+    height: 100%;
+    width:100%;
+    background:#fff;
+
+}
+.container .form-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-content .login-form,
+.form-content .signup-form{
+    width: calc(100%/ 2 - 25px);
+}
+form .form-content .title{
+    position: relative;
+    font-size:24px;
+    font-weight: 500;
+    color:#333;
+}
+form .form-content .title:before{
+    content: '';
+    position: absolute;
+    left:0;
+    bottom:0;
+    height:3px;
+    width:25px;
+    background:#c4ca12;
+}
+form .signup-form .title:before{
+    width:20px;
+}
+form .form-content .input-boxes{
+    margin-top: 30px;
+}
+form .form-content .input-box{
+    display: flex;
+    align-items: center;
+    height:50px;
+    width:100%;
+    margin: 10px 0px;
+    position: relative;
+    
+}
+.form-content .input-box input{
+    height:50px;
+    width:100%;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 17px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    transition: all 0.3 ease;
+}
+.form-content .input-box input:focus,
+.form-content .input-box input:valid{
+    border-color: #e8cd0a;
+}
+.form-content .input-box i{
+    position: absolute;
+    color: #e8cd0a;
+    font-size:17px;
+}   
+form .form-content .text{
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+form .form-content .text a{
+    text-decoration: none;
+}
+form .form-content .text a:hover{
+    text-decoration: underline;
+}
+form-content .button{
+    color: #fff;
+    margin-top: 40px;
+}
+form .form-content .button input{
+    color:#fff;
+    background:  #e8cd0a;
+    border-radius: 6px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.4s ease; 
+}
+form .form-content .button input:hover{
+    background: #dde271;
+}
+form .form-content label{
+    color: #e8cd0a;
+    cursor: pointer;
+}
+form .form-content label:hover{
+    text-decoration: underline;
+}
